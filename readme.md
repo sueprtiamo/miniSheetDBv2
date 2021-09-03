@@ -6,26 +6,26 @@ Ini adalah penerus dari versi lama [miniSheetDB v1](https://github.com/banghasan
 
 ### Keuntungan
 
-- Secara umum syntax tidak jauh berbeda dengan `miniSheetDB v1`
-- Lebih mudah mengelola spreadsheet
-- Penggunaan tidak hanya peruntukkan bot telegram, bisa untuk berbagai kebutuhan script
-- Sekarang lebih banyak method, variable dan pilihan opsi pengelolaan data yang fleksibel
-- Disertakan posisi `kolom` dan `baris` pada hasil pencarian, sehingga tidak ribet untuk pengolahan berikutnya
-- Open Source, aman bisa dilihat, diteliti dan dikembangkan bersama.
-- Struktur class yang jauh lebih rapi, mudah dipergunakan, dipelajari dan atau diturunkan
+- 一般来说，语法与 `miniSheetDB v1` 没有太大区别
+- 更容易管理电子表格
+- 不仅适用于电报机器人，还可用于各种脚本需求
+- 现在有更多方法、变量和灵活的数据管理选项
+- 搜索结果中包含  “列 kolom”  和  “行 baris”  位置，后续处理不复杂
+- 开源，安全查看，共同研究和开发。
+- 类结构更整洁，易于使用、学习和/或派生
 
 ### Peringatan
 
-Hasil dari `v2` ini tidak kompatible dengan `v1`, meskipun secara syntax memiliki banyak kemiripan.
+`v2` 的结果与 `v1` 不兼容，尽管语法有很多相似之处。
 
-> Selalu cek log hasil methodnya untuk memastikan.
+> 始终检查日志方法结果以确保。
 
 ## Pemakaian
 
 ### ID
 
-- Legacy: `MbEHC24_R5YUoHX8iCbUEAaZTb1melOAr`
-- New Editor: `1wMvpNwIL8fCMS7gN5XKPY7P-w4MmKT9yt_g2eXDGBtDErOIPq2vcNxIN`
+- 旧版: `MbEHC24_R5YUoHX8iCbUEAaZTb1melOAr`
+- 新版编辑器: `1wMvpNwIL8fCMS7gN5XKPY7P-w4MmKT9yt_g2eXDGBtDErOIPq2vcNxIN`
 
 ### Start
 
@@ -50,9 +50,9 @@ function getKey() {
 
     init(id, tab = 0, options = {})
 
-- `id` (`string`) bisa berupa sheet ID atau URL
-- `tab` (`number` atau `sting`), default adalah tab sheet dengan index 0 (yang pertama). Nilai bisa berupa nomor index sheet, atau nama sheet. Misalnya `'Sheet1'`
-- `options` pilihan operasional pada database. Periksa dibawah ini.
+- `id` (`string`) 可以是工作表 ID 或 URL
+- `tab` (`number` atau `sting`), 默认是索引为 0（第一个）的标签页。该值可以是工作表索引号或工作表名称。例如`'Sheet1'`
+- `options` - 数据库上的`options` 操作选项。检查下面。
 
 ### Options
 
@@ -88,25 +88,25 @@ Berikut list method, accessor, maupun field / tipe yang berada dalam class **min
 
 | **Method**  | **Params**               | **Keterangan**                                                                                                                                                                                                 |
 | ----------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `id`        | -                | mendapatkan / memasukkan`id` yang telah diinput |
-| `ssid`        | -                | mendapatkan ssid yang aktif sekarang dipakai                                                                                                                                                                   |
-| `type`        | -                | mendapatkan tipe ssid yang aktif, hasil berupa string bernilai `http` atau `id` sesuai tipe ssid yang diinput                                                                                                                                             |
-| `url`         | -                | mendapatkan url yang aktif sekarang dipakai                                                                                                                                                                    |
-| `name`        | -                | mendapatkan nama sheet (title) dari tab yang saat ini dipakai                                                                                                                                                  |
-| `sheet`       | -                | Pointer utama pengoperasian sheet.<br />Cek method-method pada [spreadsheet] |
-| `last_row`   | -                         | Mendapatkan posisi terakhir baris sheet                                                                                                                                                                        |
-| `data_range` | - | Mendapatkan data range dalam A1Notation
-| `range()`     | a1Notation, kolom, baris | Mendapatkan pointer range untuk pengolahan selanjutnya. <br />Cek method-method pada [range]  |
-| `add(data)` | `array` atau `data` | Menambahkan data. |
-| `getValue()`  | a1Notation, kolom, baris | mendapatkan isi suatu range                                                                                                                                                                                    |
-| `getValues()` | a1Notation, kolom, baris | mendapatkan isi suatu range secara massal                                                                                                                                                                      |
-| `setValue()`  | a1Notation, kolom, baris | mengisi nilai suatu range                                                                                                                                                                                      |
-| `setValues()` | a1Notation, kolom, baris | mengisi nilai suatu range secara massal                                                                                                                                                                        |
-| `getAll()`    | `boolean`                  | mendapatkan seluruh isi sheet, sesuai parameter awal                                                                                                                                                             |
-| `key()`       | id (`string` atau `number`)                      | Pencarian isi suatu range berdasarkan id / kunci                                                                                                                                                               |
-| `keys()`      | `[id1, id2, ...id]`       | Pencarian isi suatu range berdasarkan id / kunci secara massal                                                                                                                                                 |
-| `search()`    | `String` atau `regexp`          | pencarian berdasarkan key menggunakan string atau reguler expression                                                                                                                                           |
-| `searchAll()`    | `String` atau `regexp`          | pencarian jamak berdasarkan key, jika ketemu akan tetep dilanjutkan ke field berikutnya                                                                                                                                      |
+| `id`        | -                |获取/输入输入`id` |
+| `ssid`        | -                 |获取正在使用的活动 ssid |                                                                                                                       
+| `type`        | -                |获取活动的ssid类型，根据输入的ssid类型，结果是一个值为`http`或`id`的字符串|
+| `url`         | -                |获取当前活动 url |
+| `name`        | -                |获取当前使用的选项卡的工作表名称（标题） |
+| `sheet`       | -                |表操作的主要指针。<br />检查[电子表格]中的方法 |
+| `last_row`   | -                        |获取工作表行的最后一个位置 |
+| `data_range` | - |在 A1Notation 中获取范围数据
+| `range()`     | a1Notation, kolom, baris |获取指针范围以进行进一步处理。 <br />检查[范围]中的方法|
+| `add(data)` | `array` 或 `data` |添加数据。 |
+| `getValue()`  | a1Notation, kolom, baris |获取范围的内容 |
+| `getValues()` | a1Notation, kolom, baris |批量获取范围的内容 |
+| `setValue()`  | a1Notation, kolom, baris |填写一个范围的值 |
+| `setValues()` | a1Notation, kolom, baris |批量填写一个范围的值|
+| `getAll()`    | `boolean`                  |根据初始参数获取工作表的全部内容 |
+| `key()`       | id (`string` atau `number`)                      |通过 id / key 搜索范围的内容 |
+| `keys()`      | `[id1, id2, ...id]`        |通过 id/key 批量搜索范围的内容 |
+| `search()`    | `String` atau `regexp`          |使用字符串或正则表达式按键搜索 |
+| `searchAll()`    | `String` atau `regexp`          |基于key的多次搜索，如果找到则继续下一个字段 
 
 ## Penjelasan Detail
 
@@ -114,7 +114,7 @@ Penjelasan detail untuk beberapa method penting dan beberapa kasus, disertai ber
 
 ### add
 
-Menambahkan data.
+添加数据。
 
 ```javascript
 var db = new miniSheetDB2.init('a1b2c3');
